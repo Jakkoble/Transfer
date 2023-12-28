@@ -14,7 +14,7 @@ pub struct Cli {
     /// Use Downloads directory as destination
     #[arg(short = 'd', long = "download", action = clap::ArgAction::SetTrue)]
     pub use_downloads: bool,
-    /// Origin path
+    /// The origin path to your file/dir
     #[arg(value_name = "ORIGIN_PATH")]
     pub origin: PathBuf,
     /// Optional: New file/dir name, if not specified the original name will be used
