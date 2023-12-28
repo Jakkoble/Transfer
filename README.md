@@ -22,7 +22,7 @@ By default, you just have to specify the file/directory and it gets moved to you
 ```
 $ transfer -h
 ```
-![Terminal](https://i.imgur.com/bcJmC0W.png )
+![Terminal](https://i.imgur.com/MBQT2PN.png)
 <br />
 #### Move file to Windows Desktop
 ```
@@ -32,9 +32,9 @@ $ transfer my_script.sh
 ```
 $ transfer -c my_script.sh
 ```
-#### Copy directory to Windows Downloads Directory
+#### Copy file to Windows Desktop with Custom Name
 ```
-$ transfer -c -d my_dir
+$ transfer -c my_script.sh perfect_script
 ```
 #### Force copy file to Windows Desktop
 ```
