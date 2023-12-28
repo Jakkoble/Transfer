@@ -14,10 +14,10 @@ pub struct Cli {
     /// Use Downloads directory as destination
     #[arg(short = 'd', long = "download", action = clap::ArgAction::SetTrue)]
     pub use_downloads: bool,
-    /// New file/dir name, if not specified the original name will be used
-    #[arg(short, long, value_name = "NEW_NAME")]
-    pub name: Option<String>,
     /// Origin path
     #[arg(value_name = "ORIGIN_PATH")]
     pub origin: PathBuf,
+    /// Optional: New file/dir name, if not specified the original name will be used
+    #[arg(value_name = "NEW_NAME")]
+    pub name: Option<String>,
 }

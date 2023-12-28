@@ -33,7 +33,29 @@ fn get_destination_path(args: &Cli) -> PathBuf {
     ));
 
     if args.name.is_some() {
-        path.push(args.name.as_ref().unwrap());
+        let name = args.name.as_ref().unwrap();
+        if args.origin.is_dir() {
+            path.push(name);
+            return path;
+        }
+
+        let extension = args.origin.extension();
+        if extension.is_none() {
+            path.push(name);
+            return path;
+        }
+
+        let extension = match extension.unwrap().to_str() {
+            Some(extension) => extension,
+            None => quit_program("Failed to get extension!"),
+        };
+
+        if name.ends_with(extension) {
+            path.push(name);
+            return path;
+        }
+
+        path.push(format!("{}.{}", name, extension));
     } else {
         path.push(args.origin.file_name().unwrap());
     }
